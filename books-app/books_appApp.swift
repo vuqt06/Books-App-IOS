@@ -11,7 +11,8 @@ import SwiftUI
 struct books_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BooksList()
+                .environmentObject(BookModel())
         }
     }
 }
