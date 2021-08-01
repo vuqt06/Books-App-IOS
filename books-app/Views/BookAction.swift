@@ -14,14 +14,20 @@ struct BookAction: View {
     var body: some View {
             VStack {
                 Spacer()
-                VStack {
-                    Text("Read Now!")
-                        .font(.title)
-                    Image("cover" + String(book.id))
-                        .resizable()
-                        .clipped()
-                        .aspectRatio(contentMode: .fit)
-                }.padding(20)
+                NavigationLink(
+                    destination: BookContent(book: book),
+                    label: {
+                        VStack {
+                            Text("Read Now!")
+                                .font(.title)
+                                .foregroundColor(.black)
+                            Image("cover" + String(book.id))
+                                .resizable()
+                                .clipped()
+                                .aspectRatio(contentMode: .fit)
+                        }.padding(20)
+                    })
+                
                 Spacer()
                 VStack {
                     Text("Mark for later!")
